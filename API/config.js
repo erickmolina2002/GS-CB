@@ -4,7 +4,7 @@
  * ============================================================================
  *  ATENCAO (modulo de Ciberseguranca / DevSecOps):
  *  Este arquivo contem segredos HARDCODED de PROPOSITO. Representa a
- *  vulnerabilidade "Vazamento de Segredos" do exercicio. Ver VULNERABILITIES.md.
+ *  vulnerabilidade "Vazamento de Segredos" do exercicio.
  *
  *  >>> NAO use este padrao em producao real. <<<
  *  O correto seria carregar de variaveis de ambiente / cofre (Vault, AWS

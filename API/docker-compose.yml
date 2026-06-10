@@ -1,6 +1,6 @@
 # docker-compose da Astra API (uso local apenas).
 # NUNCA exponha este servico na internet publica — ele e intencionalmente
-# vulneravel (ver VULNERABILITIES.md).
+# vulneravel.
 version: "3.8"
 
 services:

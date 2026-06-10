@@ -28,7 +28,7 @@ function makeForwarder(base, injectParams) {
       res.status(upstream.status).json(upstream.data);
     } catch (err) {
       const status = err.response ? err.response.status : 502;
-      // Mensagem de erro verbosa (ver V6 em VULNERABILITIES.md).
+      // Mensagem de erro verbosa (V6).
       res.status(status).json({ error: 'upstream_error', upstream: url, detail: err.message });
     }
   };

@@ -18,7 +18,6 @@ Open-Meteo). Para o modulo de DevSecOps trabalhamos o backend de proxy do app
 ## Estrutura do repositorio
 
 - API/ - backend de proxy em Node/Express (o alvo da analise de seguranca).
-- API/VULNERABILITIES.md - mapeamento dos riscos e vulnerabilidades.
 - API/eslint.config.js - configuracao do lint de seguranca.
 - API/security/ - a checagem de seguranca: script, evidencias e diagrama.
 - .github/workflows/security-lint.yml - pipeline que roda a checagem no GitHub.
@@ -26,16 +25,14 @@ Open-Meteo). Para o modulo de DevSecOps trabalhamos o backend de proxy do app
 
 ## Mapeamento de riscos
 
-| Risco | Onde no projeto | Controle |
-|---|---|---|
-| Vazamento de segredos | chave da NASA e .env no codigo | gestao de segredos |
-| Imagem de conteiner vulneravel | Dockerfile com node:14 e root | imagem atual e nao-root |
-| Dependencias inseguras | bibliotecas antigas (axios, lodash...) | npm audit |
-| Permissoes excessivas / SSRF | proxy aberto, sem autenticacao | Zero Trust e SAST |
-| Falta de monitoramento | sem logs e alertas | logging e alertas |
-| Codigo inseguro (exec/fs) | command injection e path traversal | lint de seguranca |
-
-Detalhes em API/VULNERABILITIES.md.
+| Risco | Onde no projeto | Impacto | Controle |
+|---|---|---|---|
+| Vazamento de segredos | chave da NASA e .env no codigo | acesso indevido a APIs e dados | gestao de segredos |
+| Imagem de conteiner vulneravel | Dockerfile com node:14 e root | comprometimento do host | imagem atual e nao-root |
+| Dependencias inseguras | bibliotecas antigas (axios, lodash...) | exploracao de CVEs conhecidas | npm audit |
+| Permissoes excessivas / SSRF | proxy aberto, sem autenticacao | acesso a rede interna e a metadados | Zero Trust e SAST |
+| Falta de monitoramento | sem logs e alertas | incidentes nao detectados | logging e alertas |
+| Codigo inseguro (exec/fs) | command injection e path traversal | execucao remota e leitura de arquivos | lint de seguranca |
 
 ## Controles de seguranca
 

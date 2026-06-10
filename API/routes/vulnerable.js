@@ -4,7 +4,7 @@
  * ============================================================================
  *  Estes endpoints existem para o modulo de Ciberseguranca (DevSecOps).
  *  Cada um demonstra uma falha classica para que o colega de seguranca a
- *  identifique (SAST/DAST/scanners) e corrija. Ver VULNERABILITIES.md.
+ *  identifique (SAST/DAST/scanners) e corrija.
  *
  *  >>> NUNCA exponha este servico na internet publica. Rode local/Docker. <<<
  * ============================================================================

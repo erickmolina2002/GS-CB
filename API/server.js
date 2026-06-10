@@ -3,7 +3,7 @@
  *  Astra API — servidor
  * ============================================================================
  *  Backend de proxy do app Astra. Construido com vulnerabilidades INTENCIONAIS
- *  para o modulo de Ciberseguranca (DevSecOps). Ver VULNERABILITIES.md.
+ *  para o modulo de Ciberseguranca (DevSecOps).
  *
  *  Rode local/Docker apenas. NUNCA exponha na internet publica.
  * ============================================================================
@@ -44,5 +44,5 @@ app.use((err, req, res, next) => {
 
 app.listen(config.port, () => {
   console.log(`[astra-api] ouvindo em http://localhost:${config.port}`);
-  console.log('[astra-api] AVISO: build intencionalmente vulneravel (ver VULNERABILITIES.md).');
+  console.log('[astra-api] AVISO: build intencionalmente vulneravel.');
 });

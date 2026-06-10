@@ -7,7 +7,6 @@
 #   - Copia TODO o contexto, inclusive o .env com segredos, para a imagem.
 #   - Roda como root (sem USER nao-privilegiado) — privilegio excessivo.
 #   - Sem HEALTHCHECK / sem minimizar superficie.
-#  Um scan de imagem (ex.: Trivy) deve apontar tudo isso. Ver VULNERABILITIES.md.
 # ============================================================================
 FROM node:14
 

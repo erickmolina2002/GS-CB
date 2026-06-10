@@ -5,8 +5,8 @@ pelo app Astra (NASA APOD/NeoWs, Open-Meteo, ISS, geocodificacao e traducao). O
 app mobile chama este backend em vez de bater direto nas APIs de terceiros.
 
 Aviso: este servico foi construido com vulnerabilidades intencionais para o
-modulo de Ciberseguranca. Veja VULNERABILITIES.md. Nao publique na internet,
-rode apenas local ou em Docker.
+modulo de Ciberseguranca. Nao publique na internet, rode apenas local ou em
+Docker.
 
 ## Como rodar
 
@@ -65,7 +65,7 @@ variavel, o app chama as APIs externas diretamente.
 
 Este backend e o alvo do modulo de Ciberseguranca:
 
-1. Mapeamento de riscos: tabela em VULNERABILITIES.md.
+1. Mapeamento de riscos: tabela no README principal do repositorio.
 2. Controles: lint de seguranca/SAST (ESLint + Semgrep) e analise de
    dependencias (npm audit), rodando no CI.
 3. Implementacao pratica: checagem automatizada no pipeline (lint de seguranca)
