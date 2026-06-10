@@ -15,6 +15,25 @@ Open-Meteo). Para o modulo de DevSecOps trabalhamos o backend de proxy do app
 | Rayara Amaro Figueiredo | 552635 |
 | Victor Rodrigues | 554158 |
 
+## Como o DevSecOps foi integrado ao projeto
+
+O Astra ja era versionado no GitHub e usava GitHub Actions para CI. A ideia do
+DevSecOps foi colocar a seguranca dentro desse fluxo que ja existia, em vez de
+deixar para o final. Para isso, adicionamos uma checagem de seguranca que roda
+automaticamente a cada push e pull request, antes de qualquer deploy.
+
+Essa checagem funciona como um gate no pipeline: analisa o codigo do backend
+(lint de seguranca com ESLint e Semgrep) e as dependencias (npm audit). Se
+encontra um problema, por exemplo command injection, path traversal ou uma
+biblioteca com CVE, o job falha (exit code 1) e o deploy fica bloqueado ate a
+correcao. Assim a seguranca vira uma etapa obrigatoria da entrega, e nao algo
+manual ou feito depois (shift-left).
+
+A integracao se divide em quatro partes, detalhadas nas secoes abaixo: o
+mapeamento dos riscos do projeto, os dois controles de seguranca no CI (SAST e
+SCA), o diagrama mostrando onde eles entram no pipeline e a simulacao do gate
+bloqueando o deploy. As evidencias das execucoes ficam em API/security/reports/.
+
 ## Estrutura do repositorio
 
 - API/ - backend de proxy em Node/Express (o alvo da analise de seguranca).
